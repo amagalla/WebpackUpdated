@@ -1,4 +1,5 @@
 const path = require("path");
+require("@babel/polyfill");
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -12,6 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   mode: mode,
+  // entry: ["@babel/polyfill", "./src/index.js"],
 
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -47,7 +49,7 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(),
+    // new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
@@ -62,5 +64,7 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     hot: true,
+    open: true,
+    historyApiFallback: true,
   },
 };
