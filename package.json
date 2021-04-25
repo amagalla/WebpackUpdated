@@ -1,13 +1,13 @@
 {
-  "name": "NewWebpack",
+  "name": "Webpack",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve",
-    "watch": "webpack --watch",
     "build": "cross-env NODE_ENV=production webpack",
     "build-dev": "webpack",
+    "watch": "webpack --watch",
     "clean": "rm -rf dist"
   },
   "keywords": [],
@@ -24,9 +24,6 @@
     "css-loader": "^5.2.0",
     "html-webpack-plugin": "^5.3.1",
     "mini-css-extract-plugin": "^1.4.1",
-    "postcss": "^8.2.9",
-    "postcss-loader": "^5.2.0",
-    "postcss-preset-env": "^6.7.0",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "webpack": "^5.31.0",

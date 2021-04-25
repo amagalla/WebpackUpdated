@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
   mode: mode,
-  // entry: ["@babel/polyfill", "./src/index.js"],
+  // entry: ["@babel/polyfill", "./src/index.js"], this is for use of async and await
 
   output: {
     path: path.resolve(__dirname, "dist"),
@@ -37,7 +37,6 @@ module.exports = {
             options: { publicPath: "" },
           },
           "css-loader",
-          "postcss-loader",
           "sass-loader",
         ],
       },
@@ -49,7 +48,7 @@ module.exports = {
   },
 
   plugins: [
-    // new CleanWebpackPlugin(),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: "./src/index.html",
